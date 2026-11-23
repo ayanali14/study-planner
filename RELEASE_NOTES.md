@@ -1,5 +1,12 @@
 # StudyPlanner - Release Notes
 
+## v1.0.1 (23 November 2026) - Hotfix
+
+### Bug Fixes
+- Fixed the Log in button being pushed below the screen on phones. The large banner is now smaller on small screens and the page can scroll, so the button is always reachable.
+
+---
+
 ## v1.0.0 (23 November 2026)
 
 ### New Features
