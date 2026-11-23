@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudyPlanner</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Login / Register screen -->
+  <main id="auth-view" class="auth">
+    <section class="hero">
+      <h1>StudyPlanner</h1>
+      <p>Plan your assignments, quizzes and lab work in one simple place.</p>
+      <span class="version" id="app-version">v1.0.0</span>
+    </section>
+
+    <section class="auth-panel">
+      <form id="login-form" autocomplete="off">
+        <h2>Welcome back</h2>
+        <label for="login-email">Email</label>
+        <input id="login-email" type="email" placeholder="you@student.com">
+        <label for="login-password">Password</label>
+        <input id="login-password" type="password" placeholder="Your password">
+        <button type="submit" id="login-btn" class="btn btn-primary">Log in</button>
+        <p class="switch">New here? <a href="#" id="show-register">Create an account</a></p>
+      </form>
+
+      <form id="register-form" autocomplete="off" hidden>
+        <h2>Create account</h2>
+        <label for="reg-name">Full name</label>
+        <input id="reg-name" type="text" placeholder="Your full name">
+        <label for="reg-email">Email</label>
+        <input id="reg-email" type="email" placeholder="you@student.com">
+        <label for="reg-password">Password</label>
+        <input id="reg-password" type="password" placeholder="At least 6 characters">
+        <button type="submit" id="register-btn" class="btn btn-primary">Register</button>
+        <p class="switch">Already registered? <a href="#" id="show-login">Log in</a></p>
+      </form>
+
+      <p id="auth-message" class="message" role="alert"></p>
+    </section>
+  </main>
+
+  <!-- Task screen -->
+  <div id="app-view" hidden>
+    <header class="topbar">
+      <strong>StudyPlanner</strong>
+      <div>
+        <span id="user-name"></span>
+        <button id="logout-btn" class="btn btn-light">Log out</button>
+      </div>
+    </header>
+
+    <section class="board">
+      <form id="task-form" class="task-form" autocomplete="off">
+        <input id="task-title" type="text" placeholder="What do you need to finish?">
+        <select id="task-priority" aria-label="Priority">
+          <option value="Low">Low</option>
+          <option value="Medium" selected>Medium</option>
+          <option value="High">High</option>
+        </select>
+        <button type="submit" id="add-task-btn" class="btn btn-primary">Add task</button>
+      </form>
+      <p id="task-message" class="message" role="alert"></p>
+      <p id="task-count" class="count"></p>
+      <ul id="task-list" class="task-list"></ul>
+    </section>
+  </div>
+
+  <script src="storage.js"></script>
+  <script src="auth.js"></script>
+  <script src="tasks.js"></script>
+  <script src="ui.js"></script>
+</body>
+</html>

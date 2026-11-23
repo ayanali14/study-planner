@@ -1,0 +1,117 @@
+:root {
+  --ink: #1d2430;
+  --muted: #6a7384;
+  --line: #d9dde5;
+  --brand: #1f4e79;
+  --paper: #f6f7fa;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+}
+
+/* ---------- Login / Register ---------- */
+.auth {
+  display: flex;
+  min-height: 100vh;
+}
+.hero {
+  flex: 1;
+  background: var(--brand);
+  color: #fff;
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero h1 { font-size: 40px; margin: 0 0 12px; }
+.hero p { font-size: 18px; max-width: 340px; line-height: 1.5; margin: 0; }
+.version { margin-top: 28px; font-size: 13px; opacity: 0.8; }
+
+.auth-panel {
+  flex: 1;
+  background: #fff;
+  padding: 64px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.auth-panel form { max-width: 360px; width: 100%; }
+.auth-panel h2 { margin: 0 0 20px; }
+label { display: block; font-size: 14px; margin: 14px 0 6px; color: var(--muted); }
+input, select {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 15px;
+  background: #fff;
+}
+.btn {
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 18px;
+  font-size: 15px;
+  cursor: pointer;
+}
+.btn-primary { background: var(--brand); color: #fff; margin-top: 20px; width: 100%; }
+.btn-light { background: #e8ebf1; color: var(--ink); margin-left: 10px; }
+.switch { font-size: 14px; color: var(--muted); }
+.message { min-height: 20px; font-size: 14px; color: #a61b1b; margin: 12px 0 0; }
+
+/* ---------- Task screen ---------- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 14px 24px;
+}
+.board { max-width: 720px; margin: 28px auto; padding: 0 16px; }
+.task-form { display: flex; gap: 10px; }
+.task-form input { flex: 1; }
+.task-form select { width: 120px; }
+.task-form .btn-primary { width: auto; margin-top: 0; white-space: nowrap; }
+.count { color: var(--muted); font-size: 14px; margin: 6px 0 12px; }
+.task-list { list-style: none; margin: 0; padding: 0; }
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+}
+.task-item.is-done .task-title { text-decoration: line-through; color: var(--muted); }
+.badge {
+  font-size: 12px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 2px 9px;
+  margin-left: 8px;
+  color: var(--muted);
+}
+.task-actions button { margin-left: 6px; padding: 6px 10px; font-size: 13px; }
+.btn-done { background: var(--brand); color: #fff; }
+.btn-del { background: #e8ebf1; color: var(--ink); }
+
+/* ---------- Mobile layout ---------- */
+@media (max-width: 700px) {
+  .auth {
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .hero { flex: none; min-height: 460px; padding: 40px 24px; }
+  .auth-panel { flex: none; padding: 24px; }
+  .task-form { flex-wrap: wrap; }
+  .task-form select { width: 100%; }
+}
